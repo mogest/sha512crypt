@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Online javascript sha512crypt</title>
+    <script src="sha512.js"></script>
+    <script src="sha512crypt.js"></script>
+    <script src="crypt.js"></script>
+    <link rel="stylesheet" href="crypt.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <main>
+      <h1>sha512crypt online generator (javascript)</h1>
+
+      <div>
+        This page does not send your password to a server; it calculates the
+        sha512crypt value in your browser using javascript.
+      </div>
+
+      <dl>
+        <dt>Password:</dt>
+        <dd>
+          <input id="password" type="password" autofocus spellcheck="false">
+          <label><input id="password-visible" type="checkbox"> show password</label>
+        </dd>
+
+        <dt>Crypted:</dt>
+        <dd><input id="crypt" type="text" spellcheck="false"></dd>
+      </dl>
+    </main>
+  </body>
+</html>
