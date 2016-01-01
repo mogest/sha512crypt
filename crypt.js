@@ -15,19 +15,27 @@ document.addEventListener("DOMContentLoaded", function() {
   var crypt = '';
   var timer;
 
+  var setCrypt = function(newCrypt) {
+    crypt = newCrypt;
+    cryptField.value = crypt;
+  };
+
   textField.addEventListener("input", function() {
     if (timer) {
       clearTimeout(timer);
     }
 
-    crypt = '...';
-    cryptField.value = crypt;
+    if (!textField.value) {
+      setCrypt('');
+      return;
+    }
+
+    setCrypt('...');
 
     timer = setTimeout(function() {
       timer = null;
       var salt = generateSalt();
-      crypt = sha512crypt(textField.value, salt);
-      cryptField.value = crypt;
+      setCrypt(sha512crypt(textField.value, salt));
     }, 500);
   });
 
